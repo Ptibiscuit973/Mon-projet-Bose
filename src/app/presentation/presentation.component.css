@@ -1,0 +1,9 @@
+#bg{
+    background-image: url(/assets/images/dre.png);
+    background-size: 1300px ;
+    height: 700px;
+    margin-top: -40px;
+}
+*{
+    color: white;
+}

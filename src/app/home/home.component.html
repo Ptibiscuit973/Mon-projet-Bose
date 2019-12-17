@@ -1,0 +1,16 @@
+<h2 class="center-align">Liste articles</h2>
+
+<table>
+
+
+    <tr *ngFor="let art of articles">
+
+        <td>{{art.titre}}</td>
+        <img src="{{art.image}}" alt="casque" width="400"  style="float: left;">
+        <td>{{art.article}}</td>
+        <td class="blue-grey lighten-5" >{{art.auteur}}</td>
+        <td class="blue-grey lighten-4">{{art.parution}}</td>
+        
+    </tr>
+
+</table>

@@ -1,0 +1,68 @@
+<h2>Liste articles</h2>
+
+<table>
+<thead class=" center-align grey lighten-1" >
+<tr>
+    <th>Id</th>
+    <th>Titre</th>
+    <th>Image</th>
+    <th>Article</th>
+    <th>Auteur</th>
+    <th>Parution</th>
+    <th>Actions</th>
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let art of articles">
+        <td class="blue lighten-5">{{art.id}}</td>
+        <td>{{art.titre}}</td>
+        <img src="{{art.image}}" alt="" width="200">
+        <td>{{art.article}}</td>
+        <td>{{art.auteur}}</td>
+        <td>{{art.parution}}</td>
+        
+        <td>
+            <a  class="waves-effect waves-light btn  red darken-3 text-white" (click)="remove(art.id)"><i class="material-icons">delete</i>Supprimer</a>
+        </td>
+    </tr>
+</tbody>
+</table>
+<br><br>
+<div class="row">
+    <form class="col s12" [formGroup]="form" (ngSubmit)="addArticle()">
+        <div class="row">
+            <div class="input-field col s2">
+                <i class="material-icons prefix">account_circle</i>
+                <input placeholder="" id="titre" type="text" class="validate" formControlName="titre">
+                <label for="titre">Titre</label>
+            </div>
+            <div class="input-field col s2">
+                <i class="material-icons prefix">account_circle</i>
+                <input placeholder="" id="image" type="text" class="validate" formControlName="image">
+                <label for="image">Image</label>
+            </div>
+            <div class="input-field col s2">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input placeholder="" id="article" type="text" class="validate" formControlName="article">
+                    <label for="article">Article</label>
+            </div>
+            <div class="input-field col s2">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input placeholder="" id="auteur" type="text" class="validate" formControlName="auteur">
+                    <label for="auteur">Auteur</label>
+            </div>
+            <div class="input-field col s2">
+                <i class="material-icons prefix">account_circle</i>
+                <input placeholder="" id="parution" type="text" class="validate" formControlName="parution">
+                <label for="parution">Parution</label>
+            </div>
+        </div>
+        <br>
+    <div>
+        <button class="btn waves-effect waves-light" type="submit" [disabled]="form.invalid" name="action" (click)="onUpdate()">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </div>
+    </form>
+    
+</div>

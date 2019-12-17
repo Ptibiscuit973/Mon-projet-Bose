@@ -1,0 +1,18 @@
+<nav>
+  <div class="nav-wrapper grey darken-2">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a routerLink="home">Home</a></li>
+      <li><a routerLink="presentation">Presentation</a></li>
+      <li><a routerLink="contact">Contact</a></li>
+      </ul>
+  </div>
+</nav>
+
+
+<div class="rigth-align" *ngIf="test">
+  <a class="waves-effect blue-grey darken-1 btn" routerLink="/register">Register</a> 
+  <a class="waves-effect blue-grey darken-2 btn" routerLink="/login">Login</a>
+  <a class="waves-effect blue-grey darken-3 btn" routerLink="/admin">Admin</a>
+  <a class="waves-effect blue-grey darken-4 btn" (click)="onLogout()" routerLink="/logout">Déconnexion</a>
+</div>
